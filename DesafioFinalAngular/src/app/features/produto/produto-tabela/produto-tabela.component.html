@@ -1,0 +1,35 @@
+<div class="col-md-6 offset-md-3 ">
+  <h1 class="text-center">Lista Produtos</h1>
+  <table class="table table-striped table-bordered table-hover table-sm">
+    <thead class="thead-dark">
+      <th scope="col">Codigo</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Total</th>
+      <th scope="col">unidade Medida</th>
+      <th scope="col">Alterar</th>
+      <th scope="col">Deletar</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos | paginate: { itemsPerPage: contador, currentPage: paginaAtual}; let id = index ; ">
+        <td>{{ produto.codigo }}</td>
+        <td>{{ produto.descricao }}</td>
+        <td>{{ produto.qtdTotal }}</td>
+        <td>{{ produto.unidadeDeMedida }}</td>
+        <td>
+          <button class="btn btn-outline-warning mb-1 btn-md">Atualizar</button>
+        </td>
+        <td>
+          <button class="btn btn-outline-danger mb-1 btn-md" (click)="deletaProduto(produto.id)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-right">
+    <pagination-controls
+      (pageChange)="paginaAtual = $event"
+      previousLabel="Anterior"
+      nextLabel="Próximo"
+    ></pagination-controls>
+  </div>
+</div>
+

@@ -1,0 +1,11 @@
+:not(form) {
+  &.ng-touched {
+    &.ng-valid {
+      border: 2px solid green;
+    }
+
+    &.ng-invalid {
+      border: 2px solid red;
+    }
+  }
+}

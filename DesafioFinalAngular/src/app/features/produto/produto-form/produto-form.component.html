@@ -1,0 +1,61 @@
+<div class="conteiner m-3 text-center">
+  <h1>Cadastro de Produtos</h1>
+
+  <form [formGroup]="formProduto" (ngSubmit)="criaProduto()">
+    <div class="form-group col-md-6 offset-md-3">
+      <label for="descricao"><strong>Nome Produto</strong></label>
+      <input
+        type="text"
+        id="descricao"
+        name="descricao"
+        formControlName="descricao"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group col-md-6 offset-md-3">
+      <label for="codigo"><strong>Código</strong></label>
+      <input
+        type="text"
+        id="codigo"
+        name="codigo"
+        formControlName="codigo"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group col-md-6 offset-md-3">
+      <label for="unidadeDeMedida"><strong>Unidade de medida</strong></label>
+      <select
+        id="unidadeDeMedida"
+        name="unidadeDeMedida"
+        formControlName="unidadeDeMedida"
+        class="form-control"
+        required
+      >
+        <option value="Kg"><strong>Kg</strong></option>
+        <option value="Litro"><strong></strong>Litros</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6 offset-md-3">
+      <label for="qtdTotal"><strong>Quantidade total</strong></label>
+      <input
+        type="number"
+        id="qtdTotal"
+        name="qtdTotal"
+        formControlName="qtdTotal"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <input
+      type="submit"
+      class="btn btn-outline-success mb-1 btn-lg"
+      value="Salvar"
+    />
+  </form>
+</div>
